@@ -1,0 +1,30 @@
+﻿@page
+@model URL_Shortener.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - URL shortener</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+</head>
+<body>
+    <div class="border container">
+        <form method="post" class="text-center" id="centered">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <p>Введите адрес для сокращения</p>
+            <input asp-for="Urls.sourceUrl" type="text" maxlength="5000" size="55" />
+            <br/>
+            <span asp-validation-for="Urls.sourceUrl" class="text-danger"></span>
+            <div>
+                <input type="submit" class="btn btn-primary" value="Сократить" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
