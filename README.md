@@ -5,9 +5,9 @@
 ## Сборка проекта
 ### Требования
 Для сборки проекта необходимы:
-⋅⋅* **Visual Studio 2019** последней версии (16.11.3 на момент написания);
-⋅⋅* установленный пакет **ASP.NET and web development**;
-⋅⋅* возможно, пакет **.NET desktop development**.
+* **Visual Studio 2019** последней версии (16.11.3 на момент написания);
+* установленный пакет **ASP.NET and web development**;
+* возможно, пакет **.NET desktop development**.
 
 ### Возможные проблемы
 Пакеты NuGet должны восстанавливаться автоматически, если этого не происходит, возможно поможет перезапуск Visual Studio.
@@ -19,4 +19,4 @@
 4. Install-Package Microsoft.EntityFrameworkCore.Sqlite -Version 5.0.10
 5. Install-Package Microsoft.EntityFrameworkCore.Tools -Version 5.0.9
 6. Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design -Version 5.0.2
-*. Install-Package Swashbuckle.AspNetCore -Version 6.2.1
+7. Install-Package Swashbuckle.AspNetCore -Version 6.2.1
