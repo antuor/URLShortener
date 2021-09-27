@@ -11,7 +11,7 @@
 
 ### Возможные проблемы
 Пакеты NuGet должны восстанавливаться автоматически, если этого не происходит, возможно поможет перезапуск Visual Studio.
-Если пакеты по какой-то причине не востановились, нужно открыть **Tools-> NuGet Package Manager-> Package Manager Console** 
+Если пакеты по какой-то причине не востановились, нужно открыть **Tools -> NuGet Package Manager -> Package Manager Console** 
 и ввести следующие команды для отсутствующего пакета или всех сразу:
 1. Install-Package Hashids.net -Version 1.4.1
 2. Install-Package Microsoft.EntityFrameworkCore -Version 5.0.10
