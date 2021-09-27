@@ -17,6 +17,4 @@
 2. Install-Package Microsoft.EntityFrameworkCore -Version 5.0.10
 3. Install-Package Microsoft.EntityFrameworkCore.Design -Version 5.0.10
 4. Install-Package Microsoft.EntityFrameworkCore.Sqlite -Version 5.0.10
-5. Install-Package Microsoft.EntityFrameworkCore.Tools -Version 5.0.9
 6. Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design -Version 5.0.2
-7. Install-Package Swashbuckle.AspNetCore -Version 6.2.1
