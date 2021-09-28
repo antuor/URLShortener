@@ -16,7 +16,10 @@ namespace URL_Shortener.Pages
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly URLsController       _urlsController;
 
+        // Поле хранящее путь до корня приложения
         private readonly string _hostPath;
+
+        // Используется для генерации случайных чисел
         private readonly Random _getrandom;
 
         private URLs _urls;
@@ -24,9 +27,9 @@ namespace URL_Shortener.Pages
         public IndexModel(ApplicationDBContext db, IHttpContextAccessor httpContextAccessor)
         {
             _db = db;
+            _urlsController = new URLsController(_db);
             _httpContextAccessor = httpContextAccessor;
             _hostPath = "https://" + _httpContextAccessor.HttpContext.Request.Host.Value + "/";
-            _urlsController = new URLsController(_db);
             _getrandom = new Random();
             _urls = new URLs();
         }
@@ -38,7 +41,7 @@ namespace URL_Shortener.Pages
         public URLs Urls { get; set; }
 
         // Метод обрабатывающий пост запрос от формы. Проверят существует ли такая ссылка в базе
-        // при положительном ответе возвращает короткую ссылку из базы, при отрицательном сокращает
+        // при положительном ответе возвращает короткую ссылку из базы, при отрицательном кодирует
         // рандомное число, используя длинную ссылку как соль, кладёт пару в базу и возвращает короткую ссылку
         public async Task<IActionResult> OnPost()
         {
