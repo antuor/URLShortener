@@ -10,10 +10,11 @@ namespace URL_Shortener.Models
         [Key]
         [Required]
         [StringLength(10)]
-        public String shortUrl { get; set; }
+        public String ShortUrl { get; set; }
 
-        [Required]
-        [StringLength(60)]
-        public String sourceUrl { get; set; }
+        [Url(ErrorMessage = "Неподходящий формат ссылки")]
+        [Required(ErrorMessage = "Поле не может быть пустым")]
+        [StringLength(100)]
+        public String SourceUrl { get; set; }
     }
 }

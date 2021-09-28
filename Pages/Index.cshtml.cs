@@ -45,22 +45,22 @@ namespace URL_Shortener.Pages
         /// рандомное число, используя длинную ссылку как соль, кладёт пару в базу и возвращает короткую ссылку
         public async Task<IActionResult> OnPost()
         {
-            if (Urls.sourceUrl != null && Uri.IsWellFormedUriString(Urls.sourceUrl, UriKind.Absolute) == true)
+            if (ModelState.IsValid)
             {
-                _urls = _urlsController.FindURLBySource(Urls.sourceUrl);
+                _urls = _urlsController.FindURLBySource(Urls.SourceUrl);
 
                 if (_urls != null)
                 {
-                    return RedirectToPage("Shorten", new { id = _hostPath + _urls.shortUrl });
+                    return RedirectToPage("Shorten", new { id = _hostPath + _urls.ShortUrl });
                 }
 
-                var hashids     = new Hashids(Urls.sourceUrl.Trim());
+                var hashids     = new Hashids(Urls.SourceUrl.Trim());
                 int encodeNum   = _getrandom.Next(100000, 500000);
 
-                Urls.shortUrl = hashids.Encode(encodeNum);
+                Urls.ShortUrl = hashids.Encode(encodeNum);
 
                 await _urlsController.PostURLs(Urls);
-                return RedirectToPage("Shorten", new { id = _hostPath + Urls.shortUrl });
+                return RedirectToPage("Shorten", new { id = _hostPath + Urls.ShortUrl });
             }
             else
             {

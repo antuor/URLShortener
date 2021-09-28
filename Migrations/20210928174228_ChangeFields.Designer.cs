@@ -8,8 +8,8 @@ using URL_Shortener.Data;
 namespace URL_Shortener.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20210921104705_ChangeKeyInURLTable")]
-    partial class ChangeKeyInURLTable
+    [Migration("20210928174228_ChangeFields")]
+    partial class ChangeFields
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,16 +19,16 @@ namespace URL_Shortener.Migrations
 
             modelBuilder.Entity("URL_Shortener.Models.URLs", b =>
                 {
-                    b.Property<string>("shortUrl")
+                    b.Property<string>("ShortUrl")
                         .HasMaxLength(10)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("sourceUrl")
+                    b.Property<string>("SourceUrl")
                         .IsRequired()
-                        .HasMaxLength(60)
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("shortUrl");
+                    b.HasKey("ShortUrl");
 
                     b.ToTable("URLs");
                 });

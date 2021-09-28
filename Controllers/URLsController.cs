@@ -30,7 +30,7 @@ namespace URL_Shortener.Controllers
                 return NotFound();
             }
 
-            return Redirect(uRLs.sourceUrl);
+            return Redirect(uRLs.SourceUrl);
         }
 
         // Добавляет в базу полученный на вход объект URL
@@ -44,7 +44,7 @@ namespace URL_Shortener.Controllers
             }
             catch (DbUpdateException)
             {
-                if (URLsExists(urls.shortUrl))
+                if (URLsExists(urls.ShortUrl))
                 {
                     return Conflict();
                 }
@@ -54,20 +54,20 @@ namespace URL_Shortener.Controllers
                 }
             }
 
-            return CreatedAtAction("PostURLs", new { id = urls.shortUrl }, urls);
+            return CreatedAtAction("PostURLs", new { id = urls.ShortUrl }, urls);
         }
 
         // Производит поиск в базе по длиной ссылке и возвращает объект URL
         [HttpGet("api/find")]
         public URLs FindURLBySource(string sourceUrl)
         {
-            return _context.URL.SingleOrDefault(e => e.sourceUrl == sourceUrl);
+            return _context.URL.SingleOrDefault(e => e.SourceUrl == sourceUrl);
         }
 
         // Производит поиск в базе по короткой ссылке (ключу)
         private bool URLsExists(string shortUrl)
         {
-            return _context.URL.Any(e => e.shortUrl == shortUrl);
+            return _context.URL.Any(e => e.ShortUrl == shortUrl);
         }
     }
 }
