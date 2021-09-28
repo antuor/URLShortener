@@ -12,6 +12,7 @@
 ### Возможные проблемы
 Пакеты NuGet должны восстанавливаться автоматически, если у вас включена такая возможность. 
 Для её включения перейдите **Tools > Options > NuGet Package Manager** и выберите **Automatically check for missing packages during build in Visual Studio under Package Restore**
+
 Также при возникновении ошибок, может помомочь перезапуск Visual Studio.
 Если пакеты по какой-то причине не востановились, можно скачать их вручную, для этого нужно открыть **Tools > NuGet Package Manager > Package Manager Console** 
 и ввести следующие команды для отсутствующих пакетов или для всех сразу:
