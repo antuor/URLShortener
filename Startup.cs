@@ -19,8 +19,8 @@ namespace URL_Shortener
         public IConfiguration Configuration { get; }
 
         /// <summary>
-        /// Добавляет сервисы в контейнер.
-        /// Вызывается рантаймом.
+        /// Р”РѕР±Р°РІР»СЏРµС‚ СЃРµСЂРІРёСЃС‹ РІ РєРѕРЅС‚РµР№РЅРµСЂ.
+        /// Р’С‹Р·С‹РІР°РµС‚СЃСЏ СЂР°РЅС‚Р°Р№РјРѕРј.
         /// </summary>
         public void ConfigureServices(IServiceCollection services)
         {
@@ -33,8 +33,8 @@ namespace URL_Shortener
         }
 
         /// <summary>
-        /// Настраивает http пайплайн.
-        /// Вызывается рантаймом.
+        /// РќР°СЃС‚СЂР°РёРІР°РµС‚ http РїР°Р№РїР»Р°Р№РЅ.
+        /// Р’С‹Р·С‹РІР°РµС‚СЃСЏ СЂР°РЅС‚Р°Р№РјРѕРј.
         /// </summary>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
