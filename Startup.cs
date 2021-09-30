@@ -18,7 +18,10 @@ namespace URL_Shortener
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// Добавляет сервисы в контейнер.
+        /// Вызывается рантаймом.
+        /// </summary>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDBContext>(options 
@@ -29,7 +32,10 @@ namespace URL_Shortener
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// Настраивает http пайплайн.
+        /// Вызывается рантаймом.
+        /// </summary>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

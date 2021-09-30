@@ -6,7 +6,9 @@ namespace URL_Shortener.Pages
     {
         public string ShortUrl { get; set; }
 
-        // Присваивает ShortUrl значение переданного id при открытии страницы
+        /// <summary>
+        /// Присваивает ShortUrl значение переданного id при открытии страницы.
+        /// </summary>
         public void OnGet(string id)
         {
             ShortUrl = id;
