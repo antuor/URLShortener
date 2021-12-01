@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace URL_Shortener.Models
 {
     [Table("URLs")]
+    [Index(nameof(SourceUrl), nameof(ShortUrl))]
     public class URLs
     {
         [Key]
